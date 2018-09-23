@@ -39,7 +39,7 @@
 #define carSpeed 150 // initial speed of car >=0 to <=255
 #define carSpeeda 70
 #define carSpeedb 225
-#define carSpeedc 200
+#define carSpeedc 180
 
 IRrecv irrecv(RECV_PIN);
 decode_results results;
@@ -52,6 +52,8 @@ unsigned long preMillis;
 
 void forward()
 {
+    analogWrite(ENA, carSpeedc);
+    analogWrite(ENB, carSpeedc);
     digitalWrite(ENA, HIGH);
     digitalWrite(ENB, HIGH);
     digitalWrite(IN1, HIGH);
@@ -72,8 +74,8 @@ void back()
 }
 void left()
 {
-    analogWrite(ENA, carSpeedb);
-    analogWrite(ENB, carSpeedb);
+    analogWrite(ENA, carSpeedc);
+    analogWrite(ENB, carSpeedc);
     digitalWrite(IN1, LOW);
     digitalWrite(IN2, HIGH);
     digitalWrite(IN3, LOW);
@@ -82,8 +84,8 @@ void left()
 }
 void right()
 {
-    analogWrite(ENA, carSpeedb);
-    analogWrite(ENB, carSpeedb);
+    analogWrite(ENA, carSpeedc);
+    analogWrite(ENB, carSpeedc);
     digitalWrite(IN1, HIGH);
     digitalWrite(IN2, LOW);
     digitalWrite(IN3, HIGH);
@@ -92,7 +94,7 @@ void right()
 }
 void sol()
 {
-    analogWrite(ENA, carSpeed);
+    analogWrite(ENA, carSpeedb);
     analogWrite(ENB, carSpeedb);
     digitalWrite(IN1, LOW);
     digitalWrite(IN2, HIGH);
@@ -110,7 +112,7 @@ void sag()
     digitalWrite(IN3, HIGH);
     digitalWrite(IN4, LOW);
     Serial.println("turn right 90 degree!");
-    delay(700);
+    delay(500);
 }
 void circle()
 {

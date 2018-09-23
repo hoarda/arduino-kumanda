@@ -184,24 +184,45 @@ void loop()
             stop();
             break;
         case KEY_3:
-            circle();
-            ;
-            break;
+            forward();
+            delay(300);
+            stop();
+            sol();
+            delay(50);
+            // stop();
+            forward();
+            delay(200);
+            stop();
+            delay(50);
+            back();
+            delay(200);
+            stop();
+            delay(50);
+            sag();
+            forward();
+            delay(200);
+            stop();
+            delay(50);
+
         case KEY_4:
         {
             forward();
             delay(700);
+            stop();
             sag();
-            delay(300);
+            delay(250);
             forward();
             delay(700);
+            stop();
             sag();
-            delay(300);
+            delay(250);
             forward();
             delay(700);
+            stop();
             sag();
-            delay(300);
+            delay(250);
             forward();
+            stop();
             delay(700);
             stop();
             break;
